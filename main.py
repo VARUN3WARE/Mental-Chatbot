@@ -14,10 +14,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def initialize_llm():
-    groq_api_key = os.getenv("GROQ_API_KEY")
+    groq_api_key = st.secrets["GROQ_API_KEY"]
     
     if not groq_api_key:
-        raise ValueError("API key is missing. Please set the GROQ_API_KEY in the .env file.")
+        raise ValueError("API key is missing. Please set the GROQ_API_KEY in the secrets file.")
     
     llm = ChatGroq(
         temperature=0,
@@ -25,6 +25,7 @@ def initialize_llm():
         model_name="llama-3.3-70b-versatile"
     )
     return llm
+
 
 def create_vector_db():
     loader = DirectoryLoader("/content/data/", glob='*.pdf', loader_cls=PyPDFLoader)
