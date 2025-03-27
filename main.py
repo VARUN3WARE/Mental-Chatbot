@@ -1,7 +1,8 @@
 import streamlit as st
 from langchain_groq import ChatGroq
-from langchain.embeddings import HuggingFaceBgeEmbeddings
-from langchain.document_loaders import PyPDFLoader, DirectoryLoader
+from langchain_community.embeddings import HuggingFaceBgeEmbeddings
+from langchain_community.document_loaders import PyPDFLoader
+from langchain.document_loaders import DirectoryLoader
 from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
