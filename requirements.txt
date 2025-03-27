@@ -8,3 +8,4 @@ langchain_core
 langchain_community
 langgraph
 python-dotenv
+sqlite3>= 3.35.0
