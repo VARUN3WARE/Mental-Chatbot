@@ -28,7 +28,7 @@ def initialize_llm():
 
 
 def create_vector_db():
-    loader = DirectoryLoader("/content/data/", glob='*.pdf', loader_cls=PyPDFLoader)
+    loader = DirectoryLoader("data/", glob='*.pdf', loader_cls=PyPDFLoader)
     documents = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
     texts = text_splitter.split_documents(documents)
